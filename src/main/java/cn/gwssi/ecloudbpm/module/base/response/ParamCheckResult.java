@@ -1,5 +1,9 @@
-package cn.gwssi.ecloudbpm.module.base.resp;
+package cn.gwssi.ecloudbpm.module.base.response;
 
+/**
+ * @author pong
+ * @date 2020-08-28
+ */
 public class ParamCheckResult {
     private Boolean success;
     private int rowNum;
