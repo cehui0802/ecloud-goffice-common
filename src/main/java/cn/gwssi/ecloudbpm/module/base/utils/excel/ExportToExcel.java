@@ -1,12 +1,13 @@
 package cn.gwssi.ecloudbpm.module.base.utils.excel;
 
-import cn.gwssi.core.util.ToolUtil;
-import cn.gwssi.model.exception.ServiceException;
+import cn.gwssi.ecloudbpm.module.base.enums.BaseExceptionEnum;
+import cn.gwssi.ecloudframework.base.api.exception.BusinessException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.RegionUtil;
+import org.springframework.util.ObjectUtils;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -58,12 +59,13 @@ public class ExportToExcel {
     }
 
     public void createTemplate(String sheetName, String[] columnNames, List<List<Object>> props, String desc) {
-        if (ToolUtil.isNotEmpty(desc)) {
+        if (StringUtils.isNotBlank(desc)) {
+//        if (ToolUtil.isNotEmpty(desc)) {
             this.headerRowIndex = 1; //如果有说明性文字，模板第一行应该是说明性的文字，所以header放在第二行（index = 1）
         }
         createSheet(sheetName, columnNames, props);
 
-        if (ToolUtil.isNotEmpty(desc)) {
+        if (StringUtils.isNotBlank(desc)) {
             Sheet sheet = wb.getSheet(sheetName);
             //给第一行填充说明信息。
             CellRangeAddress rangeAddress = new CellRangeAddress(
@@ -118,13 +120,13 @@ public class ExportToExcel {
                     Type type = method.getGenericReturnType();
                     String typeName = type.getTypeName();
                     value = method.invoke(data, new Object[]{});
-                    if (typeName.endsWith("Date") && ToolUtil.isNotEmpty(value)) {
+                    if (typeName.endsWith("Date") && !ObjectUtils.isEmpty(value)) {
                         value = convertDate((Date) value);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                if (ToolUtil.isEmpty(value)) {
+                if (ObjectUtils.isEmpty(value)) {
                     cell.setCellValue("");
                 } else {
                     cell.setCellValue(value + "");
@@ -184,7 +186,7 @@ public class ExportToExcel {
         }
     }
 
-    public Workbook export(String fileName, HttpServletResponse response) throws ServiceException {
+    public Workbook export(String fileName, HttpServletResponse response) throws BusinessException {
         download(wb, response, fileName);
         return wb;
     }
@@ -196,7 +198,7 @@ public class ExportToExcel {
             out = response.getOutputStream();
             decodeFileName = new String(filename.getBytes("UTF-8"), "ISO-8859-1");
         } catch (Exception e) {
-            throw new ServiceException(401, "导出文件失败" + e.getMessage());
+            throw new BusinessException("导出文件失败" + e.getMessage(), BaseExceptionEnum.FILE_EXPORT_FAILED);
         }
         response.setContentType("application/octet-stream;charset=UTF-8");//x-xls
         response.addHeader("Cache-Control", "no-cache");
@@ -212,7 +214,7 @@ public class ExportToExcel {
                 out.flush();
             }
         } catch (IOException e) {
-            throw new ServiceException(401, "导出文件失败" + e.getMessage());
+            throw new BusinessException("导出文件失败" + e.getMessage(), BaseExceptionEnum.FILE_EXPORT_FAILED);
         } finally {
             try {
                 if (null != wb)

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.gwssi.ecloud</groupId>
     <version>0.1-SNAPSHOT</version>
-    <artifactId>ecloud-module-base</artifactId>
+    <artifactId>ecloud-goffice-util</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,10 +76,15 @@
         </dependency>
 
         <dependency>
-            <groupId>cn.gwssi.boot</groupId>
-            <artifactId>gwssi-boot-tools</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
+            <groupId>cn.gwssi.ecloud</groupId>
+            <artifactId>base-rest</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
