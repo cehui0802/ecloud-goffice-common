@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.goffice.util.enums;
+package cn.gwssi.ecloudbpm.goffice.common.enums;
 
 public enum DateFormatEnum {
 

@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.goffice.util.response;
+package cn.gwssi.ecloudbpm.goffice.common.response;
 
 import java.util.Date;
 

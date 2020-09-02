@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.goffice.util.enums;
+package cn.gwssi.ecloudbpm.goffice.common.enums;
 
 import cn.gwssi.ecloudframework.base.api.constant.IStatusCode;
 import lombok.AllArgsConstructor;

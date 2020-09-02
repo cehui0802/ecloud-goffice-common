@@ -1,8 +1,9 @@
-package cn.gwssi.ecloudbpm.goffice.util.utils.query;
+package cn.gwssi.ecloudbpm.goffice.common.utils.query;
 
-import cn.gwssi.ecloudbpm.goffice.util.model.PageQuery;
+import cn.gwssi.ecloudbpm.goffice.common.model.PageQuery;
 import cn.gwssi.ecloudframework.base.api.query.QueryFilter;
 import cn.gwssi.ecloudframework.base.db.model.query.DefaultQueryFilter;
+import org.springframework.util.ObjectUtils;
 
 /**
  * @ClassName PageUtil
@@ -18,7 +19,15 @@ public class QueryFilterUtil {
      * @return QueryFilter
      */
     public static QueryFilter buildQueryFilter(PageQuery pageQuery) {
-        QueryFilter queryFilter = new DefaultQueryFilter(pageQuery.isNoPage());
+
+        boolean page = false;
+
+        if (!ObjectUtils.isEmpty(pageQuery)
+                && !ObjectUtils.isEmpty(pageQuery.isNoPage())) {
+            page = pageQuery.isNoPage();
+        }
+
+        QueryFilter queryFilter = new DefaultQueryFilter(page);
         queryFilter.setPage(pageQuery);
         return queryFilter;
     }

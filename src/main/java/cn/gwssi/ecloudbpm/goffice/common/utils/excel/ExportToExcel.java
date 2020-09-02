@@ -1,6 +1,6 @@
-package cn.gwssi.ecloudbpm.goffice.util.utils.excel;
+package cn.gwssi.ecloudbpm.goffice.common.utils.excel;
 
-import cn.gwssi.ecloudbpm.goffice.util.enums.BaseExceptionEnum;
+import cn.gwssi.ecloudbpm.goffice.common.enums.BaseExceptionEnum;
 import cn.gwssi.ecloudframework.base.api.exception.BusinessException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;

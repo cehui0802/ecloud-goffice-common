@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.goffice.util.utils.excel;
+package cn.gwssi.ecloudbpm.goffice.common.utils.excel;
 
 public class MSExcelUtil {
 
