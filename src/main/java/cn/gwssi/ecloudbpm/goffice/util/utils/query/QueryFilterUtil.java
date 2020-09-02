@@ -1,6 +1,6 @@
-package cn.gwssi.ecloudbpm.module.base.utils.query;
+package cn.gwssi.ecloudbpm.goffice.util.utils.query;
 
-import cn.gwssi.ecloudbpm.module.base.model.PageQuery;
+import cn.gwssi.ecloudbpm.goffice.util.model.PageQuery;
 import cn.gwssi.ecloudframework.base.api.query.QueryFilter;
 import cn.gwssi.ecloudframework.base.db.model.query.DefaultQueryFilter;
 

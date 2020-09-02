@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.module.base.response;
+package cn.gwssi.ecloudbpm.goffice.util.response;
 
 /**
  * @author pong

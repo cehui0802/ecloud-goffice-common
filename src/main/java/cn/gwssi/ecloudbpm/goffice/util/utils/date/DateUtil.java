@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.module.base.utils.date;
+package cn.gwssi.ecloudbpm.goffice.util.utils.date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

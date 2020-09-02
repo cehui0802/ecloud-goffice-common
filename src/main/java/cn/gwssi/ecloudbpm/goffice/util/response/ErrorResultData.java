@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.module.base.response;
+package cn.gwssi.ecloudbpm.goffice.util.response;
 
 import java.util.Date;
 
@@ -28,7 +28,7 @@ public class ErrorResultData extends ResultData {
     }
 
     public ErrorResultData(String message) {
-        super(false, ResultData.DEFAULT_ERROR_CODE, message, (Object)null);
+        super(false, DEFAULT_ERROR_CODE, message, (Object)null);
     }
 
     public ErrorResultData(Integer code, String message) {

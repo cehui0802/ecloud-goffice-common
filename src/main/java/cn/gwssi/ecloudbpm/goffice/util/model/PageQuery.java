@@ -1,4 +1,4 @@
-package cn.gwssi.ecloudbpm.module.base.model;
+package cn.gwssi.ecloudbpm.goffice.util.model;
 
 import cn.gwssi.ecloudframework.base.api.Page;
 import lombok.Data;
