@@ -26,7 +26,7 @@ public class PageHelperUtils {
      * @author Lyric1st
      */
     public static void startPageAndOrderBy(PageQuery pageQuery, String defaultOrder) {
-        if (!pageQuery.isNoPage()) {
+        if (!Boolean.TRUE.equals(pageQuery.getNoPage())) {
             // 前端传入需要分页
             PageHelper.startPage(pageQuery.getPageNo(), pageQuery.getPageSize());
         }

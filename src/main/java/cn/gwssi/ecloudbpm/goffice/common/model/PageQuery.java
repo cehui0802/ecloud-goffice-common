@@ -23,7 +23,7 @@ public class PageQuery implements Page, Serializable {
 
     private String orderBy;
 
-    private boolean noPage;
+    private Boolean noPage;
 
     @Override
     public Integer getPageSize() {
