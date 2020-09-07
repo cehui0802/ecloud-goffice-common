@@ -23,8 +23,8 @@ public class QueryFilterUtil {
         boolean page = false;
 
         if (!ObjectUtils.isEmpty(pageQuery)
-                && !ObjectUtils.isEmpty(pageQuery.isNoPage())) {
-            page = pageQuery.isNoPage();
+                && !ObjectUtils.isEmpty(pageQuery.getNoPage())) {
+            page = pageQuery.getNoPage();
         }
 
         QueryFilter queryFilter = new DefaultQueryFilter(page);
