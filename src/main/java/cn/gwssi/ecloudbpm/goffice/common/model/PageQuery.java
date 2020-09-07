@@ -14,10 +14,12 @@ import java.io.Serializable;
 public class PageQuery implements Page, Serializable {
 
     private static final long serialVersionUID = -3977360984566680486L;
+    private static final int DEFAULT_PAGE_SIZE = 10;
+    private static final int DEFAULT_PAGE_NO = 1;
 
-    private Integer pageSize;
+    private Integer pageSize = DEFAULT_PAGE_SIZE;
 
-    private Integer pageNo;
+    private Integer pageNo = DEFAULT_PAGE_NO;
 
     private String sort;
 
