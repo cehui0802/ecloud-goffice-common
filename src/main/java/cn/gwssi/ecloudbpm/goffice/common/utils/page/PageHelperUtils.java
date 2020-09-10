@@ -43,7 +43,7 @@ public class PageHelperUtils {
                 orderBy += " " + pageQuery.getSort();
             }
             PageHelper.orderBy(orderBy);
-        } else if (StringUtils.isEmpty(defaultOrder)) {
+        } else if (!StringUtils.isEmpty(defaultOrder)) {
             // 前端没有传排序规则 并且有默认排序规则
             PageHelper.orderBy(defaultOrder);
         }
