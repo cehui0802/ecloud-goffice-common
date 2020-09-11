@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SendMQConfig {
-    @Value("${jms.goffice.url:https://bpm.ecloud.work/ecloud-bpm-system}")
+    @Value("${goffice.url:https://bpm.ecloud.work/ecloud-bpm-system}")
     private String url;
 
     @Value("${dataSet.url:https://bpm.ecloud.work/ecloud-bpm-dataset}")
