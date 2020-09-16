@@ -1,6 +1,7 @@
 package cn.gwssi.ecloudbpm.goffice.common.utils.page;
 
 import cn.gwssi.ecloudbpm.goffice.common.model.PageQuery;
+import cn.hutool.core.util.ObjectUtil;
 import com.github.pagehelper.PageHelper;
 import org.springframework.util.StringUtils;
 
@@ -26,6 +27,9 @@ public class PageHelperUtils {
      * @author Lyric1st
      */
     public static void startPageAndOrderBy(PageQuery pageQuery, String defaultOrder) {
+
+        if (ObjectUtil.isNull(pageQuery)) pageQuery = new PageQuery();
+
         if (!Boolean.TRUE.equals(pageQuery.getNoPage())) {
             // 前端传入需要分页
             PageHelper.startPage(pageQuery.getPageNo(), pageQuery.getPageSize());
