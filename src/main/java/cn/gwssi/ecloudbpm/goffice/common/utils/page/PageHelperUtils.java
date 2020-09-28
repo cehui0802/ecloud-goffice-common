@@ -20,6 +20,7 @@ public class PageHelperUtils {
      * Title: 开启分页和排序<br>
      * Description: startPageAndOrderBy<br>
      * CreateDate: 2020/9/3 11:14<br>
+     *
      * @param pageQuery
      * @param defaultOrder 传入""或者null 则不需要排序
      * @return void
@@ -28,7 +29,12 @@ public class PageHelperUtils {
      */
     public static void startPageAndOrderBy(PageQuery pageQuery, String defaultOrder) {
 
-        if (ObjectUtil.isNull(pageQuery)) pageQuery = new PageQuery();
+        if (ObjectUtil.isNull(pageQuery)
+                || (ObjectUtil.isNull(pageQuery.getPageNo()) || ObjectUtil.isNull(pageQuery.getPageSize()))) {
+             if (ObjectUtil.isNull(pageQuery.getNoPage()) || !pageQuery.getNoPage()) {
+                pageQuery.setNoPage(Boolean.TRUE);
+            }
+        }
 
         if (!Boolean.TRUE.equals(pageQuery.getNoPage())) {
             // 前端传入需要分页
