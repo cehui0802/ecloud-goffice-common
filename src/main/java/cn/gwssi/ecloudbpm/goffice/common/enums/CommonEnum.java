@@ -7,13 +7,13 @@ package cn.gwssi.ecloudbpm.goffice.common.enums;
  **/
 public enum CommonEnum {
 
-    YES(1,"是"),
-    NO(0,"否");
+    YES("1","是"),
+    NO("0","否");
 
-    private Integer code;
+    private String code;
     private String name;
 
-    CommonEnum(Integer code, String name) {
+    CommonEnum(String code, String name) {
         this.code = code;
         this.name = name;
     }
@@ -22,7 +22,7 @@ public enum CommonEnum {
         return name;
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 }
