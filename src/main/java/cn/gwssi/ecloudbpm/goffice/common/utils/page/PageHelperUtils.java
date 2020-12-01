@@ -45,7 +45,7 @@ public class PageHelperUtils {
 
     }
 
-    private static void orderBy(PageQuery pageQuery, String defaultOrder) {
+    public static void orderBy(PageQuery pageQuery, String defaultOrder) {
         String orderBy = "";
         if (!StringUtils.isEmpty(pageQuery.getOrderBy())) {
             orderBy += pageQuery.getOrderBy();
