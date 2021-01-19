@@ -118,21 +118,20 @@ public class DateUtil {
      * 转换Date为字符串
      */
     public static String convertDate(Date date) {
+        String result = "";
+
         if (date == null || "".equals(date)) {
-            return null;
+            return result;
         }
-        SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US);
-        String dateStr = date.toString();
-        String formatStr = "";
+
         try {
-            formatStr = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format((Date) formatter.parse(dateStr));
-            String hour = dateStr.substring(11, 13);
-            formatStr = formatStr.substring(0, 11) + hour + formatStr.substring(13, formatStr.length());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            result = formatter.format(date);
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            return formatStr;
         }
+
+        return result;
     }
 
 

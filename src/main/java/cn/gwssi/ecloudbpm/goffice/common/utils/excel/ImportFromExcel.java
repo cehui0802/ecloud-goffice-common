@@ -215,7 +215,7 @@ public class ImportFromExcel {
     }
 
     private String getCellValue(Cell cell) {
-        switch (cell.getCellTypeEnum()) {
+        switch (cell.getCellType()) {
             case STRING:
                 return cell.getStringCellValue();
             case NUMERIC:
